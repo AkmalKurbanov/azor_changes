@@ -1,0 +1,297 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title main 
+    link(rel="stylesheet", href="../styles.css")
+    link(rel="stylesheet", href="https://unpkg.com/swiper@8/swiper-bundle.min.css")
+  body
+    
+    .built-in-block
+      .banner-home
+        .swiper#banner-home
+          .swiper-wrapper
+            mixin bannerMain(bg,img,text)
+              .swiper-slide(style=`background-image: url('../img/`+bg+`.jpg')`)
+                .container
+                  .banner-home__wrap
+                    .banner-home__col
+                      .banner-home__img
+                        img(src=`../img/`+img+`.png`, alt="")
+                      .banner-home__text!=text
+                    .banner-home__col
+                      a(href="#").btn.btn--orange Перейти в каталог 
+            +bannerMain('banner','banner-img',' Встречайте, <br> iPhone 13 Pro Max с <br> технологией ProMotion.')
+            +bannerMain('banner','banner-img',' Встречайте, <br> iPhone 13 Pro Max с <br> технологией ProMotion.')
+            +bannerMain('banner','banner-img',' Встречайте, <br> iPhone 13 Pro Max с <br> технологией ProMotion.')
+          .swiper-pagination
+
+
+      .product-slider
+        .container
+          .title 
+            b Хиты продаж
+          .product-slider__wrap
+            .swiper#bestsellers
+              .swiper-wrapper
+                mixin product
+                  .swiper-slide
+                    .product-slider__item
+                      .product-slider__item-control
+                        a(href="#")
+                          svg#Capa_1(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewBox='0 0 488.85 488.85' style='enable-background:new 0 0 488.85 488.85;' xml:space='preserve')
+                            path(d='M244.425,98.725c-93.4,0-178.1,51.1-240.6,134.1c-5.1,6.8-5.1,16.3,0,23.1c62.5,83.1,147.2,134.2,240.6,134.2   s178.1-51.1,240.6-134.1c5.1-6.8,5.1-16.3,0-23.1C422.525,149.825,337.825,98.725,244.425,98.725z M251.125,347.025   c-62,3.9-113.2-47.2-109.3-109.3c3.2-51.2,44.7-92.7,95.9-95.9c62-3.9,113.2,47.2,109.3,109.3   C343.725,302.225,302.225,343.725,251.125,347.025z M248.025,299.625c-33.4,2.1-61-25.4-58.8-58.8c1.7-27.6,24.1-49.9,51.7-51.7   c33.4-2.1,61,25.4,58.8,58.8C297.925,275.625,275.525,297.925,248.025,299.625z')
+                          .alert Просмотр
+                        a(href="#")
+                          svg(xmlns='http://www.w3.org/2000/svg' width='20' height='19' viewBox='0 0 20 19' fill='none')
+                            path(d='M14.5 0C12.76 0 11.09 0.81 10 2.09C8.91 0.81 7.24 0 5.5 0C2.42 0 0 2.42 0 5.5C0 9.28 3.4 12.36 8.55 17.04L10 18.35L11.45 17.03C16.6 12.36 20 9.28 20 5.5C20 2.42 17.58 0 14.5 0ZM10.1 15.55L10 15.65L9.9 15.55C5.14 11.24 2 8.39 2 5.5C2 3.5 3.5 2 5.5 2C7.04 2 8.54 2.99 9.07 4.36H10.94C11.46 2.99 12.96 2 14.5 2C16.5 2 18 3.5 18 5.5C18 8.39 14.86 11.24 10.1 15.55Z' fill='#FF741F')
+                          .alert Добавить в избранное 
+                        a(href="#")
+                          svg#Capa_1(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='38.758px' height='38.758px' viewBox='0 0 38.758 38.758' style='enable-background:new 0 0 38.758 38.758;' xml:space='preserve')
+                            path(d='M34.856,34.773V5.762h-7.939v29.012h-2.645V13.447h-7.938v21.326h-2.312V19.379H6.084v15.395H2.916V1.068H0v33.705v2.916   h1.642c0.425,0,0.85,0,1.274,0c11.353,0,22.706,0,34.061,0h1.781v-2.916H34.856z')
+                          .alert Добавить в список сравнения
+                      a(href="#").product-slider__img 
+                        img(src="../img/product-slider.jpg", alt="")
+                      .product-slider__info   
+                        a(href="#").product-slider__name iPhone 13 Pro Max, 1 TБ, Графитовый
+                        .product-slider__availability
+                          svg(xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none')
+                            path(d='M3 5L4.125 6L6 4' stroke='#20BF6B' stroke-linecap='round' stroke-linejoin='round')
+                            path(d='M5 9C7.20914 9 9 7.20914 9 5C9 2.79086 7.20914 1 5 1C2.79086 1 1 2.79086 1 5C1 7.20914 2.79086 9 5 9Z' stroke='#20BF6B')
+                          | в наличии
+                        .product-slider__price 1000.00 сом
+                        button.btn.btn--orange В корзину    
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+            .btn-slider.swiper-button-next.bestsellers-next
+            .btn-slider.swiper-button-prev.bestsellers-prev
+      
+      .ad-banner
+        .container
+          .ad-banner__wrap
+            mixin add(img,title, subtitle, light)
+              .ad-banner__col
+                a(href="#" style=`background-image: url('../img/add`+img+`.jpg')`).ad-banner__item
+                  if light == 'light'
+                    .ad-banner__item-desc
+                      h2!=title 
+                      p!=subtitle
+                  else
+                    .ad-banner__item-desc
+                      h2!=title 
+                      p!=subtitle
+            +add('1','AirPods, Просто <br> заслушаться.','Ноль проводов. Максимум <br> преимуществ.')
+            +add('2','Умная колонка <br> - <b>HomePod</b>','Управляйте своим умным <br> домом с помощью голоса.','light')
+      
+      .product-slider
+        .container
+          .title 
+            b Новинки
+          .product-slider__wrap
+            .swiper#new
+              .swiper-wrapper
+                mixin product
+                  .swiper-slide
+                    .product-slider__item
+                      .product-slider__item-control
+                        a(href="#")
+                          svg#Capa_1(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewBox='0 0 488.85 488.85' style='enable-background:new 0 0 488.85 488.85;' xml:space='preserve')
+                            path(d='M244.425,98.725c-93.4,0-178.1,51.1-240.6,134.1c-5.1,6.8-5.1,16.3,0,23.1c62.5,83.1,147.2,134.2,240.6,134.2   s178.1-51.1,240.6-134.1c5.1-6.8,5.1-16.3,0-23.1C422.525,149.825,337.825,98.725,244.425,98.725z M251.125,347.025   c-62,3.9-113.2-47.2-109.3-109.3c3.2-51.2,44.7-92.7,95.9-95.9c62-3.9,113.2,47.2,109.3,109.3   C343.725,302.225,302.225,343.725,251.125,347.025z M248.025,299.625c-33.4,2.1-61-25.4-58.8-58.8c1.7-27.6,24.1-49.9,51.7-51.7   c33.4-2.1,61,25.4,58.8,58.8C297.925,275.625,275.525,297.925,248.025,299.625z')
+                        a(href="#")
+                          svg(xmlns='http://www.w3.org/2000/svg' width='20' height='19' viewBox='0 0 20 19' fill='none')
+                            path(d='M14.5 0C12.76 0 11.09 0.81 10 2.09C8.91 0.81 7.24 0 5.5 0C2.42 0 0 2.42 0 5.5C0 9.28 3.4 12.36 8.55 17.04L10 18.35L11.45 17.03C16.6 12.36 20 9.28 20 5.5C20 2.42 17.58 0 14.5 0ZM10.1 15.55L10 15.65L9.9 15.55C5.14 11.24 2 8.39 2 5.5C2 3.5 3.5 2 5.5 2C7.04 2 8.54 2.99 9.07 4.36H10.94C11.46 2.99 12.96 2 14.5 2C16.5 2 18 3.5 18 5.5C18 8.39 14.86 11.24 10.1 15.55Z' fill='#FF741F')
+                        a(href="#")
+                          svg#Capa_1(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='38.758px' height='38.758px' viewBox='0 0 38.758 38.758' style='enable-background:new 0 0 38.758 38.758;' xml:space='preserve')
+                            path(d='M34.856,34.773V5.762h-7.939v29.012h-2.645V13.447h-7.938v21.326h-2.312V19.379H6.084v15.395H2.916V1.068H0v33.705v2.916   h1.642c0.425,0,0.85,0,1.274,0c11.353,0,22.706,0,34.061,0h1.781v-2.916H34.856z')  
+                      a(href="#").product-slider__img
+                        img(src="../img/product-slider.jpg", alt="")
+                      .product-slider__info   
+                        a(href="#").product-slider__name iPhone 13 Pro Max, 1 TБ, Графитовый
+                        .product-slider__availability
+                          svg(xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none')
+                            path(d='M3 5L4.125 6L6 4' stroke='#20BF6B' stroke-linecap='round' stroke-linejoin='round')
+                            path(d='M5 9C7.20914 9 9 7.20914 9 5C9 2.79086 7.20914 1 5 1C2.79086 1 1 2.79086 1 5C1 7.20914 2.79086 9 5 9Z' stroke='#20BF6B')
+                          | в наличии
+                        .product-slider__price 1000.00 сом
+                        button.btn.btn--orange В корзину    
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+            .btn-slider.swiper-button-next.new-next
+            .btn-slider.swiper-button-prev.new-prev
+      
+      .ad-banner
+        .container
+          .ad-banner__wrap
+            mixin add(img,title, subtitle)
+              .ad-banner__col
+                 a(href="#" style=`background-image: url('../img/add`+img+`.jpg')`).ad-banner__item
+                  .ad-banner__item-desc
+                    h2!=title 
+                    p!=subtitle
+            +add('3','Canon EOS 5D Mark <br> IV',' Исключительное качество <br> изображения.')
+            +add('4','Apple Watch <br> Nike+',' Подключайтесь через <br> спорт')
+
+      .product-slider
+        .container
+          .title 
+            b На основе просмотров
+          .product-slider__wrap
+            .swiper#view
+              .swiper-wrapper
+                mixin product
+                  .swiper-slide
+                    .product-slider__item
+                      .product-slider__item-control
+                        a(href="#")
+                          svg#Capa_1(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewBox='0 0 488.85 488.85' style='enable-background:new 0 0 488.85 488.85;' xml:space='preserve')
+                            path(d='M244.425,98.725c-93.4,0-178.1,51.1-240.6,134.1c-5.1,6.8-5.1,16.3,0,23.1c62.5,83.1,147.2,134.2,240.6,134.2   s178.1-51.1,240.6-134.1c5.1-6.8,5.1-16.3,0-23.1C422.525,149.825,337.825,98.725,244.425,98.725z M251.125,347.025   c-62,3.9-113.2-47.2-109.3-109.3c3.2-51.2,44.7-92.7,95.9-95.9c62-3.9,113.2,47.2,109.3,109.3   C343.725,302.225,302.225,343.725,251.125,347.025z M248.025,299.625c-33.4,2.1-61-25.4-58.8-58.8c1.7-27.6,24.1-49.9,51.7-51.7   c33.4-2.1,61,25.4,58.8,58.8C297.925,275.625,275.525,297.925,248.025,299.625z')
+                        a(href="#")
+                          svg(xmlns='http://www.w3.org/2000/svg' width='20' height='19' viewBox='0 0 20 19' fill='none')
+                            path(d='M14.5 0C12.76 0 11.09 0.81 10 2.09C8.91 0.81 7.24 0 5.5 0C2.42 0 0 2.42 0 5.5C0 9.28 3.4 12.36 8.55 17.04L10 18.35L11.45 17.03C16.6 12.36 20 9.28 20 5.5C20 2.42 17.58 0 14.5 0ZM10.1 15.55L10 15.65L9.9 15.55C5.14 11.24 2 8.39 2 5.5C2 3.5 3.5 2 5.5 2C7.04 2 8.54 2.99 9.07 4.36H10.94C11.46 2.99 12.96 2 14.5 2C16.5 2 18 3.5 18 5.5C18 8.39 14.86 11.24 10.1 15.55Z' fill='#FF741F')
+                        a(href="#")
+                          svg#Capa_1(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='38.758px' height='38.758px' viewBox='0 0 38.758 38.758' style='enable-background:new 0 0 38.758 38.758;' xml:space='preserve')
+                            path(d='M34.856,34.773V5.762h-7.939v29.012h-2.645V13.447h-7.938v21.326h-2.312V19.379H6.084v15.395H2.916V1.068H0v33.705v2.916   h1.642c0.425,0,0.85,0,1.274,0c11.353,0,22.706,0,34.061,0h1.781v-2.916H34.856z')  
+                      a(href="#").product-slider__img
+                        img(src="../img/product-slider.jpg", alt="")
+                      .product-slider__info   
+                        a(href="#").product-slider__name iPhone 13 Pro Max, 1 TБ, Графитовый
+                        .product-slider__availability
+                          svg(xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none')
+                            path(d='M3 5L4.125 6L6 4' stroke='#20BF6B' stroke-linecap='round' stroke-linejoin='round')
+                            path(d='M5 9C7.20914 9 9 7.20914 9 5C9 2.79086 7.20914 1 5 1C2.79086 1 1 2.79086 1 5C1 7.20914 2.79086 9 5 9Z' stroke='#20BF6B')
+                          | в наличии
+                        .product-slider__price 1000.00 сом
+                        button.btn.btn--orange В корзину    
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+                +product
+            .btn-slider.swiper-button-next.view-next
+            .btn-slider.swiper-button-prev.view-prev
+
+
+      .stock
+        .container  
+          .title 
+            b Действующие акции 
+          .stock__wrap(style="background-image: url('../img/stock_bg.png')")
+            mixin stock(img, title, subtitle)
+              a(href="#").stock__item(style=`background-image: url('../img/stock`+img+`.jpg')`)
+                .stock__title=title
+                  span=subtitle
+            +stock('1', 'Скидка по', 'купону')    
+            +stock('2','Бесплатная','доставка')    
+            +stock('3','Скидка','самовывозе')    
+            +stock('4','Скидки на','xbox')    
+
+      .feedback
+        .container
+          .title 
+            b Обратная связь
+          .feedback__wrap
+            .feedback__col
+              .title Оставайтесь на связи
+              p Подпишитесь на нашу рассылку и получите купон на 10% <br> скидку! 
+              .feedback__bottom
+                form(action="")
+                  .feedback__form
+                    .form-input
+                      input(type="text" placeholder="E-mail")
+                    button(type="submit").btn.btn--orange Подписаться
+            .feedback__col
+              .title Присоединяйтесь!
+              p Подписывайтесь на наши соц.сети и узнавайте первыми все <br> акции и предложения!
+              .feedback__bottom
+                ul.social
+                  mixin social(icon)
+                    li
+                      a(href="#")
+                        img(src=`../img/social`+icon+`.jpg`, alt="")
+                  +social('1')
+                  +social('2')
+                  +social('3')
+                  +social('4')
+                  +social('5')
+      .brands 
+        .container 
+          .title 
+            b Популярные бренды
+          .brands__wrap
+            mixin brand(logo)
+              .brands__item
+                a(href="#").brands__logo
+                  img(src=`../img/brand`+logo+`.png`, alt="")
+            +brand('1')
+            +brand('2')
+            +brand('3')
+            +brand('4')
+            +brand('5')
+            +brand('6')
+            +brand('7')
+            +brand('8')
+            +brand('9')
+            +brand('10')
+            +brand('11')
+            +brand('12')
+            +brand('13')
+            +brand('14')
+            +brand('15')
+            +brand('16')
+            +brand('17')
+            +brand('18')
+            +brand('19')
+            +brand('20')
+            +brand('21')
+            +brand('22')
+            +brand('23')
+            +brand('24')
+            +brand('25')
+            +brand('26')
+            +brand('27')
+            +brand('28')
+            +brand('29')
+            +brand('30')
+            +brand('31')
+            +brand('32')
+            +brand('33')
+            +brand('34')
+            +brand('35')
+            +brand('36')
+            +brand('37')
+            +brand('38')
+            +brand('39')
+            +brand('40')
+
+  script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+  script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js") 
+  script(src="../scripts.js")

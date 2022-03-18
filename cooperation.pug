@@ -1,0 +1,121 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title cooperation
+    link(rel="stylesheet", href="../styles.css")
+  body
+    .built-in-block
+      .cooperation
+        mixin cooperation(bg, img, title, subtitle, text, btn, position, btColor)
+          if position == 'right'
+            .content-section.content-section--float-right(style=`background-image: url(../img/cooperation_bg`+bg+`.jpg)`)
+              .content-section__col-wrap
+                .content-section__col
+                  .content-section__img
+                    img(src=`../img/cooperation`+img+`.jpg`, alt="")
+                .content-section__col
+                  .content-section__text-wrap
+                    h2.content-section__title!=title
+                    h3.content-section__subtitle!=subtitle
+                    .content-section__text
+                      !=text
+                    if btColor == 'dark'  
+                      a(href="#").btn.btn--dark=btn
+                    else 
+                      a(href="#").btn.btn--light=btn
+
+          else 
+            .content-section.content-section--float-left(style=`background-image: url(../img/cooperation_bg`+bg+`.jpg)`)
+              .content-section__col-wrap
+                .content-section__col
+                  .content-section__img
+                    img(src=`../img/cooperation`+img+`.jpg`, alt="")
+                .content-section__col
+                  .content-section__text-wrap
+                    h2.content-section__title!=title
+                    h3.content-section__subtitle!=subtitle
+                    .content-section__text
+                      !=text
+            
+        +cooperation('1','1','Начни бизнес <br> в партнерстве с AZOR', 'Первый маркетплейс в Кыргызстане <br> с бесплатной доставкой', '<p>Lorem Ipsum является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.Lorem Ipsum является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.Lorem Ipsum является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.</p>', 'начать бизнес','right', 'dark')
+        +cooperation('2','2','Добро пожаловать в Маркетплейс AZOR', 'Доверьтесь экспертам логистики с огромных <br> опытом работы', '<p>Lorem Ipsum является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.Lorem Ipsum является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.Lorem Ipsum является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.</p> <p>Lorem Ipsum является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.Lorem Ipsum является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.Lorem Ipsum является текст-заполнитель обычно используется в графических, печать и издательской индустрии для предварительного просмотра макета и визуальных макетах.</p>', '')
+        +cooperation('3','3','Стать продавцом', 'Открыть свой бизнес с нами легко. <br> Всего пара шагов — и вот у вас уже есть свой магазин, поток клиентов и продажи.', '<ul><li>Поможем разработать бренд</li><li> Дадим нужные знания для развития</li><li>Поможем отправить товары на склад</li><li>Поможем подготовить товары к продаже</li></ul>','стать продавцом','right')
+
+        .cooperation__addvantages
+          .container
+            .cooperation__addvantages-list
+              mixin addvantages(img, title, subtitle, text)
+                .cooperation__item
+                  .cooperation__item-img
+                    img(src=`../img/cooperation-adv`+img+`.png`, alt="")
+                  .cooperation__item-title!=title
+                    span=subtitle
+                  p=text
+              +addvantages('1','Продавайте больше <br>','онлайн', 'Разместив свои товары на AZOR, вы автоматически получаете доступ к площадке с посещаемостью 15 000 человек в день, а это в 15 раз больше, чем полный зал Национальной Филармонии Бишкека, или в 5 раз больше, чем ежедневных посетителей ЦУМ.')
+              +addvantages('2','Снижай','расходы','Вместе с маркетплейсом AZOR вы сможете сэкономить около 90% от этой суммы. Сэкономленные средства в этом случае вы можете проинвестировать в рекламу и обеспечить себе в несколько раз больше продаж!')
+              +addvantages('3','Продавайте больше <br>','онлайн', ' Более 1 000 000 подписчиков прямо в приложениях ведущих банков 250 000 активных покупателей из 2 миллиона платежеспособных Кыргызстанцев старше 16 лет 1 500 000 посетителей сайта в месяц, которые приходят из сотен источников')
+
+          .cooperation__addvantages-graphic
+            .cooperation__graphic
+              svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 1921.16 498.99')
+                defs
+                  style.
+                    .cls-1{fill:url(#Безымянный_градиент);}.cls-2,.cls-3,.cls-4,.cls-5,.cls-6{fill:none;}.cls-2,.cls-7{stroke:#ff741f;}.cls-2{stroke-width:3px;}.cls-3,.cls-4,.cls-5,.cls-6{stroke-opacity:0.2;}.cls-3,.cls-4,.cls-5,.cls-6,.cls-7{stroke-width:2px;}.cls-3{stroke:url(#Безымянный_градиент_4);}.cls-4{stroke:url(#Безымянный_градиент_4-2);}.cls-5{stroke:url(#Безымянный_градиент_4-3);}.cls-6{stroke:url(#Безымянный_градиент_4-4);}.cls-7{fill:#fff;}
+                  lineargradient(id='Безымянный_градиент' x1='940.18' y1='356.43' x2='982.34' y2='11.91' gradientTransform='matrix(1, 0, 0, -1, 0, 434.98)' gradientUnits='userSpaceOnUse')
+                    stop(offset='0.11' stop-color='#ff741f' stop-opacity='0.63')
+                    stop(offset='1' stop-color='#232f3e' stop-opacity='0')
+                  lineargradient(id='Безымянный_градиент_4' x1='547.16' y1='29.99' x2='547.16' y2='-64.01' gradientTransform='matrix(1, 0, 0, -1, 0, 434.98)' gradientUnits='userSpaceOnUse')
+                    stop(offset='0' stop-color='#fff')
+                    stop(offset='1' stop-color='#fff' stop-opacity='0')
+                  lineargradient(id='Безымянный_градиент_4-2' x1='367.16' y1='-11.01' x2='367.16' y2='-65.26' xlink:href='#Безымянный_градиент_4')
+                  lineargradient(id='Безымянный_градиент_4-3' x1='727.16' y1='79.99' x2='727.16' y2='-64.01' xlink:href='#Безымянный_градиент_4')
+                  lineargradient(id='Безымянный_градиент_4-4' x1='907.16' y1='139.99' x2='907.16' y2='-64.01' xlink:href='#Безымянный_градиент_4')
+                g(id='Слой_2' data-name='Слой 2')
+                  g(id='Слой_1-2' data-name='Слой 1')
+                    path.cls-1(d='M364.66,421,1.16,432.9v65.58h1920V1.48l-138,25-112,32-124,15-119,39-142,26-201,34-55,52.5-125,43.5-32,34-44,14.5-104,12-53.5,9-36,15.75-32.5,14.75-57,10-115,19.5Z')
+                    path.cls-2(d='M.05,432.48l363.5-13,66.5-23.5,115-18,56.5-11,69.5-31.5,53-8L828.55,316l44-14,31.5-34.5,125-42.5,55-53,345.5-61,117-40.5,125-13.5,111-31,137.5-24.5')
+                    line.cls-3(x1='547.16' y1='404.99' x2='547.16' y2='498.99')
+                    line.cls-4(x1='367.16' y1='445.99' x2='367.16' y2='498.99')
+                    line.cls-5(x1='727.16' y1='354.99' x2='727.16' y2='498.99')
+                    line.cls-6(x1='907.16' y1='294.99' x2='907.16' y2='498.99')
+                    g
+                      circle.cls-7(cx='366.16' cy='420.99' r='5')
+                      text.graphic-points(x='390' y='430')
+                        tspan(x="390" dy="1.2em").mc 3 000 00
+                        tspan(x="390" dy="1.2em") ПОКУПАТЕЛЕЙ
+                    g
+                      circle.cls-7(cx='547.16' cy='378.99' r='5')
+                      text.graphic-points(x='570' y='430') 
+                        tspan(x="570" dy="1.2em") ДОСТАВЛЯЕМ 
+                        tspan(x="570" dy="1.2em").mc В 50 ГОРОДОВ
+                    g
+                      circle.cls-7(cx='726.16' cy='328.99' r='5')
+                      text.graphic-points(x='750' y='430') 
+                        tspan(x="750" dy="1.2em").mc 100 000 ЗАКАЗОВ
+                        tspan(x="750" dy="1.2em") В СУТКИ
+                    g
+                      circle.cls-7(cx='906.16' cy='268.99' r='5')
+                      text.graphic-points(x='930' y='430')
+                        tspan(x="930" dy="1.2em") ПЕРЕЕЗД НА
+                        tspan(x="930" dy="1.2em").mc НОВЫЙ СКЛАД
+                
+
+             
+              .cooperation__graphic-text.container
+                div
+                  h2 Самый быстрорастущий <br> маркетплейс
+                  p Мы стремительно растем. <br>
+                    | Успейте занять лидирующие позиции <br>
+                    | в своей нише на Azor.
+                .cooperation__graphic-total-result
+                  .cooperation__graphic-percent 1120%
+                  p Динамика роста
+                    span компании за 2022
+
+
+  script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+  script(src="https://unpkg.com/swiper@8/swiper-bundle.min.js") 
+  script(src="../scripts.js")

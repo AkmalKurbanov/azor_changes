@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title about
+    link(rel="stylesheet", href="../styles.css")
+  body 
+    .built-in-block
+      .about 
+        .container 
+          .title О компании
+          .banner-page(style="background-image: url('../img/about_bg.jpg')")
+          .about__col-wrap.about__col-wrap--desc
+            .about__col
+                .title Что такое “Azor”?
+            .about__col
+              p Azor - это  — глобальная виртуальная торговая площадка, предоставляющая возможность покупать товары производителей из КНР, а также России, Европы, Турции и других стран. Товары на площадке продаются в розницу и мелким оптом.
+              p Azor работают без перерывов, выходных и праздников. На сайте, в отличие от обычных магазинов, нет очередей. Покупку любого выбранного товара можно отложить, при этом вся информация о нём сохраниться в аккаунте. При выборе товара можно читать отзывы других покупателей, и на их основе делать свой выбор.
+          .about__col-wrap
+            .about__col
+              .about__col-wrap.about__col-wrap--inside
+                .about__col
+                  .about__col-item
+                    img(src="../img/about1.jpg", alt="")
+                .about__col
+                  .about__col-item.about__col-item--text
+                    p Сегодня покупатели Azor могут найти то, что ищут, в Интернете и лично. От доставки свежих продуктов на дом до мебельных товаров и многого другого — мы всегда находим новые способы порадовать наших клиентов.
+              .about__customers
+                img(src="../img/customers.jpg", alt="")
+            .about__col
+              .about__col-item
+                img(src="../img/about2.jpg", alt="")
+
+          .advantages 
+            .title.title--mc Наши преимущества
+            br
+            .advantages__col-wrap
+              .advantages__col
+                .advantages__list
+                  mixin advantage(img,title,desc)
+                    .advantages__item
+                      .advantages__img
+                        .advantages__img-wrap
+                          img(src=`../img/adv`+img+`.png`, alt="")
+                      .advantages__desc
+                        h2=title
+                        p=desc
+
+                  +advantage('1','Доставка','Более 20 пунктов самовывоза. Оперативная доставка к Вашим дверям.')    
+                  +advantage('2','Сервис','Квалифицированные менеджеры. Доставка в удобное время. Удобный возврат товара.')    
+                  +advantage('3','Качество','Прямые поставки от производителя с полным контролем качества.')    
+                  +advantage('4','Сотрудничество','Предлагаем выгодные условия сотрудничества для бюджетных организаций.')    
+                  +advantage('5','Удобная оплата','Наличный, безналичный расчет, банковской картой. Рассрочка и кредит.')    
+                  +advantage('6','Выгода','Широкий и разнообразный ассортимент товаров по доступным ценам.')    
+              .advantages__col
+                img(src="../img/adv.jpg", alt="")

@@ -1,0 +1,154 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title order
+    link(rel="stylesheet", href="../styles.css")
+  body
+    .container
+      .built-in-block
+        .order 
+          h2.title Оформление заказа
+          form(action="")
+            .col-wrap.col-wrap--order 
+              .col
+                .order__title Заполните данные для оформления заказа
+                .order__form
+                  .order__form-col
+                    mixin input(label,id,plh)
+                      .order__form-input.form-input 
+                        label(for=id)=label
+                        input(type="text" id=id placeholder=plh) 
+                    +input('Фамилия','surname','Ваша фамилия')
+                    +input('ИМЯ','name','Ваше имя')
+                    +input('Email','email','Электронная почта')
+                    +input('номер телефона','phone','Номер мобильного телефона')
+                    +input('* почтовый индекс ','postcode','Номер почтового индекса')
+                  .order__form-col
+                    .order__form-input.order__form-input--textarea.form-input 
+                      label(for='note') Примечание
+                      textarea(type="text" id='note' placeholder='Напишите сообщение')
+                .tab
+                  .order__title  Выберите способ доставки    
+                  ul.tabs
+                    li
+                      a(href='#') Доставить к пункту выдачи
+                    li
+                      a(href='#') Доставить курьером
+                    li
+                      a(href='#') Express доставка
+                  
+                  .tab_content
+                    .tabs_item
+                      .select 
+                        input(type="hidden" class="select__input" name="issue_point")
+                        .select__selected-option
+                        .select__dropdown
+                          .select__option(data-value="г. Бишкек, ул Уметалиева, 127 (Головной офис)") г. Бишкек, ул Уметалиева, 127 (Головной офис)
+                          .select__option(data-value="г. Каракол, ул. Гагарина 87") г. Каракол, ул. Гагарина 87
+                   
+                    .tabs_item
+                      .select 
+                        input(type="hidden" class="select__input" name="сourier_delivery")
+                        .select__selected-option
+                        .select__dropdown
+                          .select__option(data-value="г. Бишкек, ул Уметалиева, 127 (Головной офис)") г. Бишкек, ул Уметалиева, 127 (Головной офис)
+                          .select__option(data-value="г. Каракол, ул. Гагарина 87") г. Каракол, ул. Гагарина 87
+                     
+                    .tabs_item
+                      .select 
+                        input(type="hidden" class="select__input" name="express_delivery")
+                        .select__selected-option
+                        .select__dropdown
+                          .select__option(data-value="г. Бишкек, ул Уметалиева, 127 (Головной офис)") г. Бишкек, ул Уметалиева, 127 (Головной офис)
+                          .select__option(data-value="г. Каракол, ул. Гагарина 87") г. Каракол, ул. Гагарина 87
+
+                .pay
+                  .pay__method  
+                    .pay__title Картой
+                    fieldset.pay__method-wrap#card
+                      mixin method(img, val)
+                        .pay__method-item 
+                          .radio-btn
+                            label
+                              input(type="radio" name="card" value=val)
+                              img(src=`../img/`+img+`.png`, alt="")  
+                      +method('ec','elcard')   
+                      +method('visa', 'visa')   
+                      +method('mc','masterCard')   
+
+                  .pay__method
+                    .pay__title Мобильным кошельком
+                    fieldset.pay__method-wrap#mobileWallet 
+                      mixin method(img, val)
+                        .pay__method-item 
+                          .radio-btn
+                            label
+                              input(type="radio" name="mobile_wallet" value=val)
+                              img(src=`../img/`+img+`.png`, alt="") 
+                      +method('mp','megapay')   
+                      +method('o', 'o')   
+                      +method('b','balance')   
+                      +method('es','elsom')   
+
+                  .pay__method
+                    .pay__title Банком
+                    fieldset.pay__method-wrap#bank 
+                      mixin method(img, val)
+                        .pay__method-item 
+                          .radio-btn
+                            label
+                              input(type="radio" name="bank" value=val)
+                              img(src=`../img/`+img+`.png`, alt="") 
+                      +method('mb','mbank')   
+                      +method('ob', 'optima_bank')   
+                      +method('db','demir_bank')
+
+                  .pay__method.pay__method--without-shadow
+                    .pay__title Преобрести в кредит
+                    a(href="#").btn.btn--orange
+                      span BANK
+                      span кредит <br> рассрочка
+
+                    .select 
+                        input(type="hidden" class="select__input" name="issue_point")
+                        .select__selected-option
+                        .select__dropdown
+                          .select__option(data-value="Исламское финансирование") Исламское финансирование
+                          .select__option(data-value="Потребительские кредиты") Потребительские кредиты
+
+              .col
+                .basket-list
+                  .basket-list__header Товары в корзине
+                  .basket-list__body
+                    mixin product(name, count, price)
+                      .basket-list__product
+                        .basket-list__product-info
+                          p=name
+                          p=count 
+                          | x 
+                          p=price
+                        .basket-list__product-delete
+                        
+                    +product('Наименование товара.','1','100.00 сом')
+                    +product('Наименование товара.','1','100.00 сом')
+                    +product('Наименование товара.','1','100.00 сом')
+                    +product('Наименование товара.','1','100.00 сом')
+                    
+                    .basket-list__total 
+                      .basket-list__total-item
+                        span 4 товара  
+                        span 400.00 сом
+                      .basket-list__total-item
+                        span Доставка 
+                        span 100.00 сом
+                      .form-input
+                        input(type="text" placeholder="Подарочный сертификат или промо-код" name="promo_code")
+                      .basket-list__total-item.basket-list__total-item--total
+                        span Сумма заказа 
+                        span 500.00 сом
+                    button(type="submit").btn.btn--dark оформить заказ
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+    script(src="../scripts.js")

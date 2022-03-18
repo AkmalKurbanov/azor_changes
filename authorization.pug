@@ -1,0 +1,57 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title authorization 
+    link(rel="stylesheet", href="../styles.css")
+  body 
+    .container
+      .built-in-block
+        .account-control.account
+          .account__col(style="background-image: url('../img/bg.jpg')")
+            .account__col-wrap
+              .account__logo   
+                a(href="#")
+                  img(src="../img/logo.svg", alt="")
+              .account__text-wrap    
+                .account__title Здесь должен <br> быть некоторый текст!    
+                .account__advantages 
+                  p Преимущества зарегистрированного пользователя:
+                  ul 
+                    li Отслеживание заказов на персональной странице
+                    li Возможность настроить магазин под себя для более удобных покупок
+                    li Ускоренное оформление последующих заказов    
+                        
+                        
+          .account__col
+            a(href="#").btn.btn--dark.login Войти
+            h2 Создать учетную запись
+            form(action="")
+              .account__form 
+                mixin input(label, id)
+                  .account__form-input 
+                    label(for=id)=label
+                    input(type="text" id=id) 
+                +input('ИМЯ', 'name')
+                +input('ФАМИЛИЯ', 'surname')
+                +input('Компания', 'company')
+                +input('Телефон', 'phone')
+                +input('email', 'email')
+                +input('День рождения', 'birthday')
+                +input('пароль', 'password')
+                +input('Подтвердите пароль', 'confirmPass')
+              .account__bottom.account__bottom--authorization
+                .account__bottom-col
+                  .account__check  
+                    label(for="mailing") Списки рассылок
+                    input(type="checkbox")#mailing
+                  p Подпишитесь на нашу рассылку!
+                  p Новости компании и уникальные скидки для подписчиков  
+                .account__bottom-col
+                  a(href="#").btn.btn--orange регистрация 
+
+               
+
+

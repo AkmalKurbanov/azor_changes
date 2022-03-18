@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title login
+    link(rel="stylesheet", href="../styles.css")
+  body 
+    .container
+      .built-in-block
+        .account-control.account.account--login
+          .account__col(style="background-image: url('../img/bg.jpg')")
+            .account__col-wrap
+              .account__logo   
+                a(href="#")
+                  img(src="../img/logo.svg", alt="")
+              .account__text-wrap    
+                .account__title Здесь должен <br> быть некоторый текст!    
+                .account__advantages 
+                  p Преимущества зарегистрированного пользователя:
+                  ul 
+                    li Отслеживание заказов на персональной странице
+                    li Возможность настроить магазин под себя для более удобных покупок
+                    li Ускоренное оформление последующих заказов    
+          .account__col
+            h2 Войти
+            form(action="")
+              .account__form.account__form--nowrap 
+                mixin input(label, id)
+                  .account__form-input 
+                    label(for=id)=label
+                    input(type="text" id=id) 
+                +input('логин', 'login')
+                +input('пароль', 'password')
+              .account__pass 
+                .account__check  
+                  label(for="mailing") Запомнить меня
+                  input(type="checkbox")#mailing
+                a(href="#").forgot Забыли пароль? 
+              .account__bottom.account__bottom--btn-block
+                .account__bottom-col
+                  a(href="#").btn.btn--orange Войти 
+                .account__bottom-col
+                  a(href="#").btn.btn--dark регистрация 
+              span или
+
+              .account__social-login 
+                a(href="#").social-btn
+                  span 
+                    img(src="../img/soc1.svg", alt="")
+                  | Продолжить с Google
+                a(href="#").social-btn
+                  span
+                    img(src="../img/soc2.svg", alt="")
+                  | Продолжить с Facebook
+               
+
+
