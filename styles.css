@@ -3394,3 +3394,100 @@
 .built-in-block .cooperation .graphic-points tspan.mc {
   fill: #FF741F;
 }
+.built-in-block .not-found {
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+}
+@media (max-width: 767.98px) {
+  .built-in-block .not-found {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.built-in-block .not-found__img {
+  margin-right: 30px;
+  width: 55%;
+}
+@media (max-width: 1199.98px) {
+  .built-in-block .not-found__img {
+    width: 40%;
+  }
+}
+@media (max-width: 767.98px) {
+  .built-in-block .not-found__img {
+    width: 50%;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 991.98px) {
+  .built-in-block .not-found__text {
+    width: 50%;
+  }
+}
+@media (max-width: 767.98px) {
+  .built-in-block .not-found__text {
+    width: 70%;
+  }
+}
+@media (max-width: 575.98px) {
+  .built-in-block .not-found__text {
+    width: 100%;
+    text-align: center;
+  }
+}
+.built-in-block .not-found__text p {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #656D77;
+  line-height: 25.78px;
+}
+@media (max-width: 1199.98px) {
+  .built-in-block .not-found__text p {
+    font-size: 21px;
+  }
+}
+@media (max-width: 991.98px) {
+  .built-in-block .not-found__text p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 767.98px) {
+  .built-in-block .not-found__text p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 575.98px) {
+  .built-in-block .not-found__text p {
+    font-size: 16px;
+  }
+}
+.built-in-block .not-found__text h2 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+@media (max-width: 991.98px) {
+  .built-in-block .not-found__text h2 {
+    font-size: 47px;
+  }
+}
+@media (max-width: 767.98px) {
+  .built-in-block .not-found__text h2 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 575.98px) {
+  .built-in-block .not-found__text h2 {
+    font-size: 30px;
+  }
+}
+.built-in-block .not-found__text .btn {
+  margin-top: 30px;
+}
+@media (max-width: 575.98px) {
+  .built-in-block .not-found__text .btn {
+    margin-top: 20px;
+  }
+}
